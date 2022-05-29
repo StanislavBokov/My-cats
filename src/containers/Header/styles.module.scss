@@ -1,0 +1,42 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/colorConstants';
+@import '../../assets/styles/normalize';
+
+.Header {
+    width: 100%;
+    background-color: $headerBackground;
+    color: $colorWhite;
+    box-shadow: 0 4px 4px $headerBoxShadow;
+  
+   
+    .mainWrapper {
+        @include centered();
+
+        .list {
+            display: flex;
+
+            li {
+                padding: spacing(2.75);
+                font-size: 14px;
+
+                &:hover {
+                    background-color: $selectedPage;
+                }
+            }
+            
+        }
+    }
+}
+@include forDesktopBig {
+    .Header {
+        padding:spacing(0,17)
+    }
+}
+@include forTablet {
+    .Header {
+        padding:spacing(0)
+    }
+    .list {
+        justify-content: center;
+    }
+}

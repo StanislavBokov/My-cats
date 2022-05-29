@@ -1,0 +1,56 @@
+@mixin centered() {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1092px;
+}
+
+// spacing
+$defaultSpacingUnit: 8;
+@function spacing($top, $right: null, $bottom: null, $left: null) {
+  @if $top != null and $right == null and $bottom == null and $left == null {
+    @return #{$top * $defaultSpacingUnit}#{'px'};
+  }
+
+  @if $top != null and $right != null and $bottom == null and $left == null {
+    @return #{$top * $defaultSpacingUnit}#{'px'} #{$right * $defaultSpacingUnit}#{'px'};
+  }
+
+  @if $top != null and $right != null and $bottom != null and $left == null {
+    @return #{$top * $defaultSpacingUnit}#{'px'} #{$right * $defaultSpacingUnit}#{'px'} #{$bottom * $defaultSpacingUnit}#{'px'};
+  }
+
+  @return #{$top * $defaultSpacingUnit}#{'px'} #{$right * $defaultSpacingUnit}#{'px'} #{$bottom * $defaultSpacingUnit}#{'px'}
+    #{$left * $defaultSpacingUnit}#{'px'};
+}
+
+
+// Media request mixins MobileFirst
+@mixin forTablet {
+  @media screen and (max-width: 481px) {
+    @content;
+  }
+}
+
+@mixin forDesktopSm {
+  @media screen and (max-width: 721px) {
+    @content;
+  }
+}
+
+@mixin forDesktopMiddle {
+  @media screen and (max-width: 981px) {
+    @content;
+  }
+}
+
+@mixin forDesktopBig {
+  @media screen and (max-width: 1281px) {
+    @content;
+  }
+}
+
+@mixin forDesktopHuge {
+  @media screen and (max-width: 1441px) {
+    @content;
+  }
+}

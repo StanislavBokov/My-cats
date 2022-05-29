@@ -1,0 +1,27 @@
+
+@import '../../../../assets/styles/colorConstants';
+.heartIcon {
+    opacity: 0;
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    
+    stroke: $hoveredHeart;
+    path:hover {
+        fill: $hoveredHeart
+    }
+
+    &:active {
+        stroke: $clickedHeart;
+
+        path:active {
+            fill:$clickedHeart
+        }         
+    }
+}
+.fillIcon {
+
+    path {
+      fill: $hoveredHeart
+    }
+}

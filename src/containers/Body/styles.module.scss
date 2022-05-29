@@ -1,0 +1,53 @@
+@import '../../assets/styles/colorConstants';
+@import '../../assets/styles/mixins';
+
+.MainPage {
+    @include centered();
+    display: grid;
+    grid-template-columns: 240px 240px 240px 240px;
+    justify-content: center;
+    gap: spacing(6);
+    margin-top: spacing(6.5);
+    .catWrap {
+        width: 225px;
+        height: 225px;
+        background-size: cover;
+        background-position-x : 50%;
+        background-position-y : 50%;
+        position: relative;
+
+        &:hover {
+            box-shadow: 0px 6px 5px $catWrapBoxShadow1, 0px 9px 18px $catWrapBoxShadow2;
+
+            .opacityHeart {
+                opacity: 1;   
+            }
+        }
+    }
+}
+.loader {
+    padding: spacing(6, 0);
+    text-align: center;
+}
+
+@include forDesktopBig {
+    .MainPage {
+        grid-template-columns: 240px 240px 240px;
+    }
+}
+@include forDesktopMiddle {
+    .MainPage {
+       
+        grid-template-columns: 240px 240px
+    }
+}
+@include forTablet {
+    .MainPage {
+        gap: spacing(1.25);
+        grid-template-columns: 150px 150px ;
+        .catWrap {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
